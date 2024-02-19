@@ -186,3 +186,95 @@ main{
     background-size: 80%
 }
 
+.projectsPart{
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+}
+
+.projectsPart .project1{
+    position: relative;
+}
+
+.projectsPart .project1 .content p:nth-child(2){
+    font-size: 30px;
+    color: #CCD6F6;
+    margin-bottom: 40px;
+}
+
+/* !!!blur efekti çalışmıyor!!! */
+.projectsPart .project1 .content .blurredContainer{
+    background-image: url(Media/CardBackground.png);
+    filter: blur(5px);
+    width: 42%;
+}
+
+.projectsPart .project1 .imageArea{
+    position: absolute;
+    right: 25%;
+    top: 0px;
+    padding: 20px 0 0 20px;
+    background-color: #2B0B3A;
+    display: inline-block;
+    width: 38%;
+    line-height: 0;
+    height: auto;
+    z-index: -1;
+}
+
+.projectsPart .project2{
+    margin-top: 250px;
+    position: relative;
+}
+
+.projectsPart .project2 .content p:nth-child(2){
+    font-size: 30px;
+    color: #CCD6F6;
+    margin-bottom: 40px;
+}
+
+.projectsPart .project2 .content{
+    position: absolute;
+    right: 25%;
+    top: 0px;
+    width: 42%;
+}
+
+.projectsPart .project2 p{
+    text-align: right;
+}
+
+/* !!!blur efekti çalışmıyor!!! */
+.projectsPart .project2 .content .blurredContainer{
+    background-image: url(Media/CardBackground.png);
+    filter: blur(5px);
+    
+}
+
+.projectsPart .project2 .imageArea{
+
+    padding: 20px 20px 0 0;
+    background-color: #2B0B3A;
+    display: inline-block;
+    width: 38%;
+    line-height: 0;
+    height: auto;
+    z-index: -1;
+}
+
+.contactPart{
+    margin-top: 250px;
+    width: 48%;
+}
+
+.contactPart p:first-child{
+    font-size: 25px;
+    margin-bottom: 80px;
+}
+
+.contactPart p:nth-child(2){
+    margin-bottom: 30px;
+}
+
+.contactPart .images img{
+    margin: 30px 30px 0 0;
+}
