@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Cousine:wght@700&family=Inter:wght@500&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Preahvihear&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.purpleText{
+    color: #7127BA;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -20,13 +25,8 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 23%;
+    padding: 15px 15%;
     background-color: #1A0B2E;
-}
-
-header .logo{
-    width: 35px;
-    height: 30px;
 }
 
 header nav{
@@ -43,125 +43,107 @@ header a{
 }
 
 main{
-    margin-left: 20%;
-    margin-top: 100px;
+    width: 60%;
+    margin: 100px auto;
 }
 
 .aboutMe > div{
     margin-bottom: 96px;
 }
 
-.part1{
+.aboutMe .helloPart{
     display: flex;
-    width: 80%;
 }
 
-.part1 .image {
+.aboutMe .helloPart .image {
     height: 300px;
-}
-
-.part1 .image img{
     margin-top: 30px;
     margin-right: 10px;
 }
 
-.part1 .texts{
-    width: 35%;
-}
-
-.part1 .texts p:first-child{
+.aboutMe .helloPart .texts p:first-child{
     margin-left: -15px;
     margin-bottom: 55px;
 }
 
-.part1 .texts p:nth-child(2){
+.aboutMe .helloPart .texts p:nth-child(2){
     text-decoration: underline;
     text-decoration-thickness: 0;
 }
 
-.part1 .texts p:nth-child(3){
+.aboutMe .helloPart .texts p:nth-child(3){
     margin-bottom: -10px;
     font-size: 40px;
     line-height: 60px;
 }
 
-.part1 .texts p:nth-child(4){
+.aboutMe .helloPart .texts p:nth-child(4){
     margin-top: 15px;
     font-size: 11px;
 }
 
-.purpleText{
-    color: #7127BA;
-}
-
-.part1 .texts .circled{
+.aboutMe .helloPart .texts .circled{
     background-image: url(Media/Ellipse\ 5.png);
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-.part2{
-    width: 60%;
+.aboutMe .introductionPart{
     margin-left: 25px;
 }
 
-.part2 p:first-child{
+.aboutMe .introductionPart p:first-child{
     font-size: 40px;
 }
-.part2 p:nth-child(2){
-    margin-bottom: 60px;
+.aboutMe .introductionPart p:nth-child(2){
+    margin-bottom: 30px;
 }
 
-.part2 .facebookWord{
+.aboutMe .introductionPart .facebookWord{
     color: #1877F2;
 }
 
-.part3{
+.aboutMe .experiencesPart{
+    /* gradient bg */
     background-image: url(Media/Gradient.png);
     background-repeat: no-repeat;
     background-position: 35%;
     background-size: contain;
 }
 
-.part3 .experienceBoxes{
-    width: 80%;
+.aboutMe .experiencesPart p:first-child{
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+
+.aboutMe .experiencesPart .experienceBoxes{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px 17px;
 }
 
-.part3 .experienceBoxes .experienceBox{
+.aboutMe .experiencesPart .experienceBoxes .experienceBox{
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     padding: 30px 44px;
     background-color: #1A0B2E;
-    width: 100%;
     display: flex;
     align-items: center;
     gap: 10px;
     border-radius: 10px;
 }
 
-.part3 p:first-child{
-    font-size: 30px;
-    margin-bottom: 50px;
-}
-
-.part3 .experienceBoxes .experienceBox .experienceTextArea{
-    width: 100%;
-}
-
-.part3 .experienceBoxes .experienceBox .experienceTextArea .header{
+.aboutMe .experiencesPart .experienceBoxes .experienceBox .experienceTextArea .header{
     font-size: 20px;
     font-weight: 600;
 }
 
-.part3 .experienceBoxes .experienceBox .experienceTextArea .text{
+.aboutMe .experiencesPart .experienceBoxes .experienceBox .experienceTextArea .text{
     font-size: 10px;
 }
 
-.part3 .experienceBoxes .experienceBox .experienceTextArea .button{
+.aboutMe .experiencesPart .experienceBoxes .experienceBox .experienceTextArea .button{
     font-size: 10px;
     background-color: #2C1250;
     border: #693B93 2px solid;
@@ -172,161 +154,154 @@ main{
     margin-top: 10px;
 }
 
-.part4{
-    width: 80%;
+.aboutMe .intentionPart{
     text-align: center;
 }
 
-.part4 p:nth-child(2){
+.aboutMe .intentionPart p:nth-child(2){
     font-size: 12px;
+    margin-bottom: 20px;
 }
 
-.part4 .image{
+.aboutMe .intentionPart .image img{
+    height: 100%;
     width: 100%;
-    height: 510px;
-    background-image: url(Media/experiencesTotalImage.png);
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-size: 80%
+    object-fit: cover;
 }
 
-.projectsPart{
+.projects{
     font-family: "Poppins", sans-serif;
     font-weight: 500;
+    margin-top: 150px;
 }
 
-.projectsPart .project1{
+.projects > div{
+    margin-bottom: 200px;
     position: relative;
 }
 
-.projectsPart .project1 .content p:nth-child(2){
+.projects .content{
+    /* ????!!!!????!!!!????!!!!????!!!!????!!!! */
+    width: 60%;
+}
+
+.projects .project1 .content p:nth-child(2){
     font-size: 30px;
     color: #CCD6F6;
     margin-bottom: 40px;
 }
 
 /* !!!blur efekti çalışmıyor!!! */
-.projectsPart .project1 .content .blurredContainer{
+.projects .project1 .content .blurredContainer{
     background-image: url(Media/CardBackground.png);
     filter: blur(5px);
-    width: 42%;
 }
 
-.projectsPart .project1 .imageArea{
-    position: absolute;
-    right: 25%;
-    top: 0px;
-    padding: 20px 0 0 20px;
+.projects .imageArea{
     background-color: #2B0B3A;
     display: inline-block;
-    width: 38%;
-    line-height: 0;
-    height: auto;
+    width: 450px;
     z-index: -1;
+    /* to eliminate ekstra space at the end of div*/
+    line-height: 0;
 }
 
-.projectsPart .project2{
-    margin-top: 250px;
-    position: relative;
-}
-
-.projectsPart .project2 .content p:nth-child(2){
-    font-size: 30px;
-    color: #CCD6F6;
-    margin-bottom: 40px;
-}
-
-.projectsPart .project2 .content{
+.projects .project1 .imageArea{
     position: absolute;
-    right: 25%;
+    right: 0;
     top: 0px;
-    width: 42%;
+    padding: 20px 0 0 20px;
+    filter: blur(0.5px);
 }
 
-.projectsPart .project2 p{
+.projects .project2 .content{
+    position: absolute;
+    right: 0;
+    top: 0px;
+}
+
+.projects .project2 p{
     text-align: right;
 }
 
+.projects .project2 .content p:nth-child(2){
+    font-size: 30px;
+    color: #CCD6F6;
+    margin-bottom: 40px;
+}
+
 /* !!!blur efekti çalışmıyor!!! */
-.projectsPart .project2 .content .blurredContainer{
+.projects .project2 .content .blurredContainer{
     background-image: url(Media/CardBackground.png);
     filter: blur(5px);
 }
 
-.projectsPart .project2 .imageArea{
-
+.projects .project2 .imageArea{
+    position: relative;
     padding: 20px 20px 0 0;
-    background-color: #2B0B3A;
-    display: inline-block;
-    width: 38%;
-    line-height: 0;
-    height: auto;
-    z-index: -1;
 }
 
-.contactPart{
-    margin-top: 250px;
-    width: 48%;
-}
-
-.contactPart p:first-child{
+.contact p:first-child{
     font-size: 25px;
     margin-bottom: 80px;
 }
 
-.contactPart p:nth-child(2){
+.contact p:nth-child(2){
     margin-bottom: 30px;
 }
 
-.contactPart .images img{
+.contact .images img{
     margin: 30px 30px 30px 0;
 }
 
+
+
+/* !!RESPONSIVE!! */
+
 /* Big Screen */
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 960px) {
     main{
-        margin-left: 100px;
         font-size: 0.7em;
     }
 
-    .part1 .texts p:nth-child(3){
+    .aboutMe .helloPart .texts p:nth-child(3){
         margin-bottom: -10px;
         font-size: 30px;
         line-height: 40px;
     }
 
-    .part2 p:first-child{
+    .aboutMe .introductionPart p:first-child{
         font-size: 30px;
     }
 
-    .part3 .experienceBoxes{
-        width: 80%;
-        display: grid;
+    .aboutMe .experiencesPart .experienceBoxes{
         grid-template-columns: 1fr;
-        gap: 20px 17px;
+    }
+
+    .projects .imageArea{
+        width: 400px;
+        opacity: 0.4;
     }
 }
 
 /* Mid Screen */
-@media screen and (max-width: 665px) {
-    .part1 .texts p:nth-child(3){
-        font-size: 20px;
-        line-height: 40px;
-    }
-    .part2 p:first-child{
-        font-size: 20px;
-    }
-    .part3 p:first-child{
-        font-size: 20px;
-    }
-
-    .projectsPart .project1 .content .blurredContainer{
-        background-image: url(Media/CardBackground.png);
-        filter: blur(5px);
+@media screen and (max-width: 750px) {
+    main{
         width: 80%;
     }
 
-    .projectsPart .project2 .content{
+    .aboutMe .helloPart .texts p:nth-child(3){
+        font-size: 20px;
+        line-height: 40px;
+    }
+    .aboutMe .introductionPart p:first-child{
+        font-size: 20px;
+    }
+    .aboutMe .experiencesPart p:first-child{
+        font-size: 20px;
+    }
+
+    .projects .project2 .content{
         width: 80%;
     }
 
@@ -338,24 +313,21 @@ main{
         width: 80%;
         margin-left: 100px;
     }
-
-
 }
 
 /* Small Screen */
 @media screen and (max-width: 585px) {
-    .part1{
+    .aboutMe .helloPart{
         display: block;
-    }
-    .part1 .texts{
-        width: 100%;
-    }
-    .part1 .texts p:first-child{
         text-align: center;
     }
-    .part2{
-        width: 80%;
+
+    .aboutMe .helloPart .texts p:first-child{
+        text-align: center;
+    }
+    
+    .aboutMe .introductionPart{
         margin-left: 0px;
+        text-align: center;
     }
 }
-
