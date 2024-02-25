@@ -6,6 +6,26 @@
     color: #7127BA;
 }
 
+.vector{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url(Media/Gradient.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -2;
+}
+.arrowVector{
+    position: absolute;
+    top: -46px;
+    left: 165px;
+    background-image: url(Media/Arrow.png);
+    background-size: contain;
+    width: 100px;
+    height: 100px;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -59,6 +79,12 @@ main{
     height: 300px;
     margin-top: 30px;
     margin-right: 10px;
+    position: relative;
+}
+
+.aboutMe .helloPart .image .vector {
+    top: -10%;
+    transform: scale(1.4, 1.4);
 }
 
 .aboutMe .helloPart .texts p:first-child{
@@ -101,6 +127,7 @@ main{
 }
 
 .aboutMe .introductionPart .facebookWord{
+    position: relative;
     color: #1877F2;
 }
 
@@ -108,7 +135,7 @@ main{
     /* gradient bg */
     background-image: url(Media/Gradient.png);
     background-repeat: no-repeat;
-    background-position: 35%;
+    background-position: 50%;
     background-size: contain;
 }
 
@@ -127,7 +154,8 @@ main{
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     padding: 30px 44px;
-    background-color: #1A0B2E;
+    background: rgb(26,11,46);
+    background: linear-gradient(153deg, rgba(26,11,46,1) 37%, rgba(44,18,80,1) 87%);
     display: flex;
     align-items: center;
     gap: 10px;
@@ -143,15 +171,18 @@ main{
     font-size: 10px;
 }
 
-.aboutMe .experiencesPart .experienceBoxes .experienceBox .experienceTextArea .button{
+.aboutMe .experiencesPart .experienceBoxes .experienceBox .experienceTextArea .learnMoreButton{
     font-size: 10px;
+    font-family: "Poppins", sans-serif;
     background-color: #2C1250;
+    color: white;
     border: #693B93 2px solid;
     border-radius: 10px;
     width: 120px;
     text-align: center;
     padding: 7px 15px;
     margin-top: 10px;
+    cursor: pointer;
 }
 
 .aboutMe .intentionPart{
@@ -176,7 +207,7 @@ main{
 }
 
 .projects > div{
-    margin-bottom: 200px;
+    margin-bottom: 300px;
     position: relative;
 }
 
@@ -202,6 +233,7 @@ main{
     display: inline-block;
     width: 450px;
     z-index: -1;
+
     /* to eliminate ekstra space at the end of div*/
     line-height: 0;
 }
@@ -213,6 +245,13 @@ main{
     padding: 20px 0 0 20px;
     filter: blur(0.5px);
 }
+
+.projects .project1 .imageArea .vector{
+    top: 0;
+    left: -25%;
+    transform: scale(2, 1.9);
+}
+
 
 .projects .project2 .content{
     position: absolute;
@@ -239,6 +278,12 @@ main{
 .projects .project2 .imageArea{
     position: relative;
     padding: 20px 20px 0 0;
+}
+
+.projects .project2 .imageArea .vector{
+    top: 0;
+    left: -30%;
+    transform: scale(2, 1.9);
 }
 
 .contact p:first-child{
@@ -313,6 +358,26 @@ main{
         width: 80%;
         margin-left: 100px;
     }
+
+
+    /* vector alignments */
+    .projects .project1 .imageArea .vector{
+        width: 50%;
+        left: 0;
+        top: -10%;
+    }
+    .projects .project2 .imageArea .vector{
+        width: 50%;
+        left: 0;
+        top: -10%;
+    }
+
+    .aboutMe .helloPart .image .vector {
+        top: -10%;
+        transform: scale(1.2, 1.2);
+    }
+
+
 }
 
 /* Small Screen */
@@ -322,6 +387,16 @@ main{
         text-align: center;
     }
 
+    .aboutMe .helloPart p:first-child{
+        position: absolute;
+        top: 100px;
+        
+        /* to center hello sentence */
+        left: 50%;
+        transform: translate(-40%, 0);
+        font-size: 20px;
+    }
+
     .aboutMe .helloPart .texts p:first-child{
         text-align: center;
     }
@@ -329,5 +404,11 @@ main{
     .aboutMe .introductionPart{
         margin-left: 0px;
         text-align: center;
+    }
+
+    .arrowVector{
+        left: 64%;
+        top: -40px;
+        transform: rotateY(180deg) rotateZ(-80deg);
     }
 }
