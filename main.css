@@ -69,11 +69,11 @@ header a{
 
 main{
     width: 60%;
-    margin: 100px auto;
+    margin: 110px auto;
 }
 
 .aboutMe > div{
-    margin-bottom: 176px;
+    margin-bottom: 130px;
 }
 
 .aboutMe .helloPart{
@@ -311,7 +311,7 @@ main{
     }
 
     .aboutMe > div{
-        margin-bottom: 80px;
+        margin-bottom: 65px;
     }
 
     .aboutMe .helloPart .texts p:nth-child(3){
