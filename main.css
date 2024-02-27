@@ -2,6 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Preahvihear&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+:root{
+    --headerFontSize: 38px;
+    --textFontSize: 16px;
+}
+
 .purpleText{
     color: #7127BA;
 }
@@ -37,7 +42,7 @@ body{
     color: white;
     font-family: "Preahvihear", sans-serif;
     font-weight: 300;
-    font-size: 16px;
+    font-size: var(--textFontSize);
     
 }
 
@@ -68,7 +73,7 @@ main{
 }
 
 .aboutMe > div{
-    margin-bottom: 96px;
+    margin-bottom: 176px;
 }
 
 .aboutMe .helloPart{
@@ -99,7 +104,7 @@ main{
 
 .aboutMe .helloPart .texts p:nth-child(3){
     margin-bottom: -10px;
-    font-size: 40px;
+    font-size: var(--headerFontSize);
     line-height: 60px;
 }
 
@@ -120,7 +125,7 @@ main{
 }
 
 .aboutMe .introductionPart p:first-child{
-    font-size: 40px;
+    font-size: var(--headerFontSize);
 }
 .aboutMe .introductionPart p:nth-child(2){
     margin-bottom: 30px;
@@ -140,8 +145,8 @@ main{
 }
 
 .aboutMe .experiencesPart p:first-child{
-    font-size: 30px;
-    margin-bottom: 50px;
+    font-size: var(--headerFontSize);
+    margin-bottom: 20px;
 }
 
 .aboutMe .experiencesPart .experienceBoxes{
@@ -207,7 +212,7 @@ main{
 }
 
 .projects > div{
-    margin-bottom: 300px;
+    margin-bottom: 250px;
     position: relative;
 }
 
@@ -216,16 +221,25 @@ main{
     width: 60%;
 }
 
-.projects .project1 .content p:nth-child(2){
+.projects .content p:nth-child(2){
     font-size: 30px;
     color: #CCD6F6;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
-/* !!!blur efekti çalışmıyor!!! */
-.projects .project1 .content .blurredContainer{
-    background-image: url(Media/CardBackground.png);
-    filter: blur(5px);
+.projects .content .blurredBg{
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.001);
+    backdrop-filter: blur(100px);
+    border-radius: 25px;
+    z-index: -1;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.projects .content .blurredBg .info{
+    font-weight: 300;
+    font-size: var(--textFontSize);
+    color: #CCD6F6;
 }
 
 .projects .imageArea{
@@ -263,18 +277,6 @@ main{
     text-align: right;
 }
 
-.projects .project2 .content p:nth-child(2){
-    font-size: 30px;
-    color: #CCD6F6;
-    margin-bottom: 40px;
-}
-
-/* !!!blur efekti çalışmıyor!!! */
-.projects .project2 .content .blurredContainer{
-    background-image: url(Media/CardBackground.png);
-    filter: blur(5px);
-}
-
 .projects .project2 .imageArea{
     position: relative;
     padding: 20px 20px 0 0;
@@ -287,8 +289,8 @@ main{
 }
 
 .contact p:first-child{
-    font-size: 25px;
-    margin-bottom: 80px;
+    font-size: var(--headerFontSize);
+    margin-bottom: 40px;
 }
 
 .contact p:nth-child(2){
@@ -299,24 +301,22 @@ main{
     margin: 30px 30px 30px 0;
 }
 
-
-
 /* !!RESPONSIVE!! */
 
 /* Big Screen */
 @media screen and (max-width: 960px) {
-    main{
-        font-size: 0.7em;
+    :root{
+        --headerFontSize: 30px;
+        --textFontSize: 11px;
+    }
+
+    .aboutMe > div{
+        margin-bottom: 80px;
     }
 
     .aboutMe .helloPart .texts p:nth-child(3){
         margin-bottom: -10px;
-        font-size: 30px;
         line-height: 40px;
-    }
-
-    .aboutMe .introductionPart p:first-child{
-        font-size: 30px;
     }
 
     .aboutMe .experiencesPart .experienceBoxes{
@@ -331,22 +331,19 @@ main{
 
 /* Mid Screen */
 @media screen and (max-width: 750px) {
+    :root{
+        --headerFontSize: 20px;
+    }
+
     main{
         width: 80%;
     }
 
     .aboutMe .helloPart .texts p:nth-child(3){
-        font-size: 20px;
         line-height: 40px;
     }
-    .aboutMe .introductionPart p:first-child{
-        font-size: 20px;
-    }
-    .aboutMe .experiencesPart p:first-child{
-        font-size: 20px;
-    }
 
-    .projects .project2 .content{
+    .projects .content{
         width: 80%;
     }
 
@@ -376,12 +373,14 @@ main{
         top: -10%;
         transform: scale(1.2, 1.2);
     }
-
-
 }
 
 /* Small Screen */
 @media screen and (max-width: 585px) {
+    .aboutMe > div{
+        margin-bottom: 100px;
+    }
+
     .aboutMe .helloPart{
         display: block;
         text-align: center;
@@ -395,10 +394,6 @@ main{
         left: 50%;
         transform: translate(-40%, 0);
         font-size: 20px;
-    }
-
-    .aboutMe .helloPart .texts p:first-child{
-        text-align: center;
     }
     
     .aboutMe .introductionPart{
