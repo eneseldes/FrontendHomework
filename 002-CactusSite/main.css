@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* =============== VARIABLES CSS =============== */
+:root {
+  --headerHeight: 3.5rem;
+  /* ========== Colors ========== */
+  --firstColor: hsl(93, 54%, 54%);
+  --firstColorAlt: hsl(93, 50%, 48%);
+  --firstColorLight: hsl(93, 58%, 66%);
+  --titleColor: hsl(228, 8%, 98%);
+  --textColor: hsl(228, 8%, 70%);
+  --whiteColor: hsl(228, 8%, 98%);
+  --blackColor: hsl(228, 6%, 4%);
+  --bodyColor: hsl(228, 6%, 8%);
+  --containerColor: hsl(228, 6%, 12%);
+  --shadowImg: 0 0 48px hsla(93, 54%, 54%, 0.4);
+  --gradientCard: linear-gradient(180deg, hsla(93, 8%, 8%), hsla(93, 40%, 30%));
+
+  /* ========== Font and typography ========== */
+  --bodyFont: "Montserrat", sans-serif;
+  --biggestFontSize: 2.25rem;
+  --h1FontSize: 1.5rem;
+  --h2FontSize: 1.25rem;
+  --h3FontSize: 1rem;
+  --normalFontSize: 0.938rem;
+  --smallFontSize: 0.813rem;
+
+  /* ========== Font weight ========== */
+  --fontRegular: 400;
+  --fontSemiBold: 600;
+  --fontBold: 700;
+
+  /* ========== z index ========== */
+  --zToolTip: 10;
+  --zFixed: 100;
+}
+
+/* ========== Responsive typography ========== */
+@media screen and (min-width: 1150px) {
+  :root {
+    --biggestFontSize: 4.25rem;
+    --h1FontSize: 2.25rem;
+    --h2FontSize: 1.5rem;
+    --h3FontSize: 1.25rem;
+    --normalFontSize: 1rem;
+    --smallFontSize: 0.875rem;
+  }
+}
+
+/* =============== BASE =============== */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--bodyFont);
+  font-size: var(--normalFontSize);
+  background-color: var(--bodyColor);
+  color: var(--textColor);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--titleColor);
+  font-weight: var(--fontSemiBold);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* =============== REUSABLE CSS CLASSES =============== */
+.container {
+  margin-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+  padding-block: 5rem 1rem;
+}
+
+.section__title {
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-bold);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+main {
+  overflow: hidden;
+}
+
+/* =============== HEADER AND NAV =============== */
+header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    z-index: var(--zFixed);
+}
+
+nav{
+    position: relative;
+    height: var(--headerHeight);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navLogo,
+.navClose,
+.navActions{
+    display: flex;
+    color: var(--titleColor);
+    cursor: pointer;
+}
+
+.navLogo{
+    font-weight: var(--fontSemiBold);
+    column-gap: .25rem;
+    align-items: center;
+}
+
+.navLogo i{
+    color: var(--firstColor);
+    font-size: 1.25rem;
+    font-weight: initial;
+}
+
+/* responsive navigation for mobile */
+@media screen and (max-width: 1150px){
+    .navMenu{
+        position: fixed;
+        top: 0;
+        right: -100%;
+        background-color: hsla(228, 24%, 6%, .2);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        width: 80%;
+        height: 100%;
+        padding: 6rem 3rem 0;
+        transition: right .4s;
+    }
+}
+
+.navActions{
+    font-size: 1.25rem;
+    column-gap: .5rem;
+    align-items: center;
+}
+
+.navList{
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+}
+
+.navLink{
+    color: var(--titleColor);
+    font-weight: var(--fontSemiBold);
+    transition: color .4s;
+}
+
+.navLink:hover{
+    color: var(--firstColor);
+}
+
+.navClose{
+    position: absolute;
+    top: 1.15rem;
+    right: 1.15rem;
+    font-size: 1.25rem;
+}
+
+.showMenu{
+    right: 0;
+}
+
+
+
