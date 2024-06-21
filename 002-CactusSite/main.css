@@ -195,9 +195,145 @@ nav{
     font-size: 1.25rem;
 }
 
+/* show menu */
 .showMenu{
     right: 0;
 }
 
+/* add blur header*/
+.blurHeader::after{
+  content: "";
+  position: absolute;
+  width: 1000%;
+  height: 100%;
+  background-color: hsla(228, 24%, 6%, .2);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
 
+/* =============== HOME =============== */
+.homeContainer{
+  padding-top: 2.5rem;
+  row-gap: 2rem;
+}
 
+.homeImg{
+  width: 270px;
+  filter: drop-shadow(var(--shadowImg));
+  -webkit-filter: drop-shadow(var(--shadowImg));
+  justify-self: center;
+}
+
+.homeData{
+  text-align: center;
+}
+
+.homeTitle{
+  font-size: var(--biggestFontSize);
+  font-weight: var(--fontBold);
+  margin-bottom: 1rem;
+}
+
+.homeTitle span{
+  color: var(--firstColor);
+}
+
+.homeDescription{
+  margin-bottom: 3rem;
+}
+
+.homeButtons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: .5rem
+}
+
+.button{
+  background-color: var(--whiteColor);
+  color: var(--blackColor);
+  font-weight: var(--fontBold);
+  padding: .5rem 1.5rem .5rem .5rem;
+  border-radius: 4rem;
+  display: inline-flex;
+  align-items: center;
+  column-gap: .75rem;
+}
+
+.button span{
+  background-color: var(--firstColor);
+  padding: .5rem;
+  font-size: 1.25rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transition: transform .4s;
+}
+
+.button:hover span{
+  transform: translateX(.15rem) rotate(-30deg);
+}
+
+.buttonLink{
+  color: var(--whiteColor);
+  font-weight: var(--fontBold);
+  text-decoration: underline;
+  transition: color .4s;
+}
+
+.buttonLink:hover{
+  color: var(--firstColor);
+}
+
+/* =============== NEW =============== */
+.newData{
+  text-align: center;
+}
+
+.newContainer{
+  row-gap: 7.5rem;
+}
+
+.newContent{
+  row-gap: 6rem;
+}
+
+.newCard{
+  position: relative;
+  width: 200px;
+  background: var(--gradientCard);
+  padding: 9rem .75rem 1.5rem .75rem;
+  border: 2px solid var(--firstColorLight);
+  border-radius: 1.5rem;
+}
+
+.newImg{
+  position: absolute;
+  top: -4.5rem;
+  left: 0;
+  right: 0;
+  width: 180px;
+  margin: 0 auto;
+  transition: transform .4s;
+}
+
+.newTitle{
+  font-size: var(--h2FontSize);
+  text-align: center;
+}
+
+.newCard:nth-child(odd){
+  rotate: -5deg;
+}
+
+.newCard:nth-child(even){
+  justify-self: flex-end;
+  rotate: 5deg;
+}
+
+.newCard:hover .newImg{
+  transform: translateY(-.5rem);
+}
