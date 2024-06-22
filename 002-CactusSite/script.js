@@ -34,3 +34,11 @@ const blurHeader = () =>{
                        : header.classList.remove("blurHeader");
 }
 window.addEventListener("scroll", blurHeader);
+
+/* =============== SHOW SCROLL UP =============== */
+const scrollUp = () =>{
+    const scrollUpButton = document.querySelector(".scrollUp");
+    this.scrollY >= 350 ? scrollUpButton.classList.add("showScroll")
+                        : scrollUpButton.classList.remove("showScroll");
+}
+window.addEventListener("scroll", scrollUp);

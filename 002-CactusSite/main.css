@@ -101,9 +101,9 @@ img {
   padding-block: 5rem 1rem;
 }
 
-.section__title {
-  font-size: var(--h1-font-size);
-  font-weight: var(--font-bold);
+.sectionTitle {
+  font-size: var(--h1FontSize);
+  font-weight: var(--fontBold);
   text-align: center;
   margin-bottom: 1rem;
 }
@@ -336,4 +336,223 @@ nav{
 
 .newCard:hover .newImg{
   transform: translateY(-.5rem);
+}
+
+/* =============== SHOP =============== */
+.shopContainer{
+  padding-top: 6.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6rem 1.5rem;
+}
+
+.shopCard{
+  position: relative;
+  background: var(--gradientCard);
+  padding: 5.75rem .75rem 1.25rem .75rem;
+  border: 2px solid var(--firstColorLight);
+  border-radius: 1rem;
+}
+
+.shopImg{
+  position: absolute;
+  top: -4.5rem;
+  left: 0;
+  right: 0;
+  width: 130px;
+  margin: 0 auto;
+  transition: transform .4s;
+}
+
+.shopTitle{
+  font-size: var(--smallFontSize);
+  font-weight: var(--fontSemiBold);
+  margin-bottom: .5rem;
+}
+
+.shopPrice{
+  color: var(--titleColor);
+  font-weight: var(--fontSemiBold);
+}
+
+.shopButton{
+  position: absolute;
+  right: .75rem;
+  bottom: .75rem;
+  outline: none;
+  border: none;
+  background-color: var(--whiteColor);
+  padding: 6px;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  display: grid;
+  cursor: pointer;
+}
+
+.shopCard:hover .shopImg{
+  transform: translateY(-.5rem);
+}
+
+/* =============== CARE =============== */
+.careContainer{
+  padding-top: 2rem;
+  row-gap: 2rem;
+}
+
+.careImg{
+  width: 270px;
+  filter: drop-shadow(var(--shadowImg));
+  justify-self: center;
+}
+
+.careList{
+  display: grid;
+  row-gap: 1rem;
+}
+
+.careItem{
+  display: flex;
+  column-gap: .5rem;
+  align-items: flex-start;
+}
+
+.careItem i{
+  font-size: 1.5rem;
+  color: var(--firstColor);
+}
+
+/* =============== CONTACT =============== */
+.contactContainer{
+  padding-top: 2rem;
+  row-gap: 2rem;
+}
+
+.contactImg{
+  width: 270px;
+  filter: drop-shadow(var(--shadowImg));
+  justify-self: center;
+}
+
+.contactContent{
+  display: grid;
+  row-gap: 2rem;
+  text-align: center;
+}
+
+.contactTitle{
+  font-size: var(--h2FontSize);
+  margin-bottom: .5rem;
+}
+
+.contactSocial{
+  display: flex;
+  justify-content: center;
+  column-gap: .75rem;
+}
+
+.contactSocial a{
+  color: var(--firstColor);
+  font-size: 1.5rem;
+}
+
+.contactInfo{
+  font-style: normal;
+}
+
+/* =============== FOOTER =============== */
+footer{
+  padding-block: 4rem 2rem;
+}
+
+.footerContainer{
+  row-gap: 4rem;
+}
+
+.footerLogo{
+  display: inline-block;
+  align-items: center;
+  column-gap: .25rem;
+  color: var(--titleColor);
+  font-size: var(--h2FontSize);
+  font-weight: var(--fontSemiBold);
+  margin-bottom: .75rem;
+}
+
+.footerLogo i{
+  color: var(--firstColor);
+  font-size: 1.5rem;
+  font-weight: initial;
+}
+
+.footerContent{
+  grid-template-columns: repeat(2, max-content);
+  gap: 4rem 3rem;
+}
+
+.footerTitle{
+  font-size: var(--normalFontSize);
+  margin-bottom: 1rem;
+}
+
+.footerLinks{
+  display: grid;
+  row-gap: .75rem;
+}
+
+.footerLink{
+  color: var(--textColor);
+  transition: color .4s;
+}
+
+.footerSocial{
+  display: flex;
+  column-gap: .75rem;
+}
+
+.footerSocialLink{
+  color: var(--textColor);
+  font-size: 1.5rem;
+  transition: color .4s;
+}
+
+.footerLink:hover,
+.footerSocialLink:hover{
+  color: var(--firstColor);
+}
+
+/* =============== SCROLL BAR =============== */
+::-webkit-scrollbar{
+  width: .6rem;
+  background-color: hsl(228, 4%, 15%);
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: hsl(228, 4%, 25%);
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background-color: hsl(228, 4%, 35%);
+}
+
+/* =============== SCROLL UP =============== */
+.scrollUp{
+  position: fixed;
+  right: 1rem;
+  bottom: -50%;
+  background-color: var(--containerColor);
+  color: var(--titleColor);
+  box-shadow: 0 12px 24px hsla(228, 48%, 4%, .5);
+  display: inline-flex;
+  padding: 6px;
+  font-size: 1.25rem;
+  z-index: var(--zToolTip);
+  transition: bottom .4s, transform .4s;
+}
+
+.scrollUp:hover{
+  transform: translateY(-.5rem);
+}
+
+/* Show scroll up*/
+.showScroll{
+  bottom: 3rem;
 }
