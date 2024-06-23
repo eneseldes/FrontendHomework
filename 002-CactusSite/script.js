@@ -42,3 +42,17 @@ const scrollUp = () =>{
                         : scrollUpButton.classList.remove("showScroll");
 }
 window.addEventListener("scroll", scrollUp);
+
+/* =============== SHOW REVEAL ANIMATION =============== */
+const sr = ScrollReveal({
+    origin: "top",
+    distance: "80px",
+    duration: 2500,
+    delay: 300,
+    // reset: true, // Animations repeat
+})
+
+sr.reveal(`.homeImg, .newData, .careImg, .contactContent, footer, header`);
+sr.reveal(`.homeData, .careList, .contactImg`, {delay: 500});
+sr.reveal(`.newCard`, {delay: 500, interval: 100});
+sr.reveal(`.shopCard`, {interval: 100});

@@ -556,3 +556,248 @@ footer{
 .showScroll{
   bottom: 3rem;
 }
+
+/* =============== RESPONSIVE DESIGN =============== */
+/* Small devices */
+@media screen and (max-width: 320px){
+  .container{
+    margin-inline: 1rem;
+  }
+
+  .homeTitle{
+    font-size: 2rem;
+  }
+
+  .homeButtons{
+    flex-direction: column;
+    row-gap: 1.5rem;
+  }
+
+  .shopContainer{
+    grid-template-columns: 160px;
+    justify-content: center;
+  }
+
+  .footerContent{
+    grid-template-columns: max-content;
+  }
+}
+
+/* Medium devices */
+@media screen and (min-width: 576px){
+  .homeContainer,
+  .newContainer,
+  .careContainer{
+    grid-template-columns: 400px;
+    justify-content: center;
+  }
+
+  .shopContainer{
+    grid-template-columns: repeat(2, 160px);
+    justify-content: center;
+  }
+
+  .footerContent{
+    grid-template-columns: repeat(3, max-content);
+  }
+}
+
+@media screen and (min-width: 768px){
+  .navMenu{
+    width: 50%;
+  }
+
+  .newContent{
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 4rem;
+  }
+
+  .newCard:nth-child(even){
+    transform: translateY(10rem);
+  }
+
+  .shopContainer{
+    grid-template-columns: repeat(3, 160px);
+  }
+
+  .footerContainer{
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+  }
+}
+
+/* Large devices*/
+@media screen and (min-width: 1150px){
+  .container{
+    margin-inline: 2rem;
+  }
+
+  .section{
+    padding-block: 7rem 2rem;
+  }
+
+  .sectionTitle{
+    margin-bottom: 1.5rem;
+  }
+
+  nav{
+    height: calc(var(--headerHeight) + 2rem);
+  }
+
+  .navToggle,
+  .navClose{
+    display: none;
+  }
+
+  .navLogo i{
+    font-size: 1.5rem;
+  }
+
+  .navMenu{
+    width: initial;
+  }
+
+  .navList{
+    flex-direction: row;
+    column-gap: 3.5rem;
+  }
+
+  .navActions{
+    font-size: 1.5rem;
+    column-gap: 1rem;
+  }
+
+  .homeContainer{
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    column-gap: 4rem;
+    padding-top: 4rem;
+  }
+
+  .homeImg{
+    width: 480px;
+  }
+
+  .homeData{
+    text-align: initial;
+  }
+
+  .homeDescription{
+    margin-bottom: 4.5rem;
+  }
+
+  .homeButtons{
+    justify-content: initial;
+    column-gap: 1.5rem;
+  }
+
+  .newContainer{
+    grid-template-columns: 412px 490px;
+    align-items: center;
+    column-gap: 7.5rem;
+  }
+
+  .newData,
+  .newData .sectionTitle{
+    text-align: initial;
+  }
+
+  .newContent{
+    row-gap: 8.5rem;
+  }
+
+  .newTitle{
+    font-size: var(--h3FontSize);
+  }
+
+  .shopContainer{
+    grid-template-columns: repeat(3, 240px);
+    gap: 8.5rem 4rem;
+    padding-top: 7.5rem;
+  }
+
+  .shopCard{
+    padding: 10.5rem 1.5rem 2rem;
+    border-radius: 1.5rem;
+  }
+
+  .shopImg{
+    width: 210px;
+    top: -5.5rem;
+  }
+
+  .shopTitle{
+    font-size: var(--h3FontSize);
+  }
+
+  .shopPrice{
+    font-size: var(--h2FontSize);
+  }
+
+  .shopButton{
+    right: 1.5rem;
+    bottom: 2rem;
+    font-size: 1.5rem;
+  }
+
+  .careContainer{
+    grid-template-columns: 480px 385px;
+    align-items: center;
+    column-gap: 8rem;
+    padding-top: 3rem;
+  }
+
+  .careImg{
+    width: 480px;
+  }
+
+  .careList{
+    row-gap: 1.5rem;
+  }
+
+  .contactContainer{
+    grid-template-columns: 280px 480px;
+    justify-content: center;
+    align-items: center;
+    column-gap: 8rem;
+    padding-block: 3rem;
+  }
+
+  .contactContent{
+    order: -1;
+    text-align: initial;
+    row-gap: 2.5rem;
+  }
+
+  .contactSocial{
+    justify-content: initial;
+  }
+  .contactImg{
+    width: 480px;
+  }
+  
+  .footerLogo{
+    margin-bottom: 1.5rem;
+  }
+
+  .footerLogo i{
+    font-size: 2rem;
+  }
+
+  .footerContent{
+    column-gap: 5.5rem;
+  }
+
+  .footerTitle{
+    font-size: var(--h3FontSize);
+    margin-bottom: 1.5rem;
+  }
+
+  .footerSocial{
+    column-gap: 1rem;
+  }
+
+  .scrollUp{
+    right: 3rem;
+  }
+}
