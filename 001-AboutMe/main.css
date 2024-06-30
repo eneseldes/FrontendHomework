@@ -1,409 +1,417 @@
-@import url('https://fonts.googleapis.com/css2?family=Cousine:wght@700&family=Inter:wght@500&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto:wght@100&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Preahvihear&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cousine:wght@700&family=Inter:wght@500&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Preahvihear&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-:root{
-    --headerFontSize: 38px;
-    --textFontSize: 16px;
-}
-
-.purpleText{
-    color: #7127BA;
+:root {
+  --h1FontSize: 2.5rem;
+  --h2FontSize: 1.25rem;
+  --textFontSize: 16px;
 }
 
-.vector{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-image: url(Media/Gradient.png);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    z-index: -2;
-}
-.arrowVector{
-    position: absolute;
-    top: -46px;
-    left: 165px;
-    background-image: url(Media/Arrow.png);
-    background-size: contain;
-    width: 100px;
-    height: 100px;
+/* -------------- BASE -------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body {
+  background-color: #11071f;
+  color: white;
+  font-family: "Preahvihear", sans-serif;
+  font-weight: 300;
+  font-size: var(--textFontSize);
 }
 
-body{
-    background-color: #11071F;
-    color: white;
-    font-family: "Preahvihear", sans-serif;
-    font-weight: 300;
-    font-size: var(--textFontSize);
-    
+a{
+  text-decoration: none;
+  transition: all .4s;
+  color: #7127ba;
 }
 
-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 15%;
-    background-color: #1A0B2E;
+/* -------------- REUSEABLE CSS -------------- */
+section{
+  padding-block: 6rem 6rem;
 }
 
-header nav{
-    display: flex;
-    justify-content: space-between;
-    width: 50%;
+.sectionTitle{
+    font-size: var(--h1FontSize);
+    margin-bottom: 1.25rem;
 }
 
-header a{
-    text-decoration: none;
-    color: white;
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-weight: 500;
-}
-
-main{
-    width: 60%;
-    margin: 110px auto;
-}
-
-.aboutMe > div{
-    margin-bottom: 130px;
-}
-
-.aboutMe .helloPart{
-    display: flex;
-}
-
-.aboutMe .helloPart .image {
-    height: 300px;
-    margin-top: 30px;
-    margin-right: 10px;
-    position: relative;
-}
-
-.aboutMe .helloPart .image .vector {
-    top: -10%;
-    transform: scale(1.4, 1.4);
-}
-
-.aboutMe .helloPart .texts p:first-child{
-    margin-left: -15px;
-    margin-bottom: 55px;
-}
-
-.aboutMe .helloPart .texts p:nth-child(2){
-    text-decoration: underline;
-    text-decoration-thickness: 0;
-}
-
-.aboutMe .helloPart .texts p:nth-child(3){
-    margin-bottom: -10px;
-    font-size: var(--headerFontSize);
-    line-height: 60px;
-}
-
-.aboutMe .helloPart .texts p:nth-child(4){
-    margin-top: 15px;
-    font-size: 11px;
-}
-
-.aboutMe .helloPart .texts .circled{
-    background-image: url(Media/Ellipse\ 5.png);
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.aboutMe .introductionPart{
-    margin-left: 25px;
-}
-
-.aboutMe .introductionPart p:first-child{
-    font-size: var(--headerFontSize);
-}
-.aboutMe .introductionPart p:nth-child(2){
-    margin-bottom: 30px;
-}
-
-.aboutMe .introductionPart .facebookWord{
-    position: relative;
-    color: #1877F2;
-}
-
-.aboutMe .experiencesPart{
-    /* gradient bg */
-    background-image: url(Media/Gradient.png);
-    background-repeat: no-repeat;
-    background-position: 50%;
-    background-size: contain;
-}
-
-.aboutMe .experiencesPart p:first-child{
-    font-size: var(--headerFontSize);
-    margin-bottom: 20px;
-}
-
-.aboutMe .experiencesPart .experienceBoxes{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px 17px;
-}
-
-.aboutMe .experiencesPart .experienceBoxes .experienceBox{
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    padding: 30px 44px;
-    background: rgb(26,11,46);
-    background: linear-gradient(153deg, rgba(26,11,46,1) 37%, rgba(44,18,80,1) 87%);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border-radius: 10px;
-}
-
-.aboutMe .experiencesPart .experienceBoxes .experienceBox .experienceTextArea .header{
-    font-size: 20px;
+.sectionSubtitle{
+    font-size: var(--h2FontSize);
     font-weight: 600;
 }
 
-.aboutMe .experiencesPart .experienceBoxes .experienceBox .experienceTextArea .text{
-    font-size: 10px;
+.grid{
+  display: grid;
 }
 
-.aboutMe .experiencesPart .experienceBoxes .experienceBox .experienceTextArea .learnMoreButton{
-    font-size: 10px;
-    font-family: "Poppins", sans-serif;
-    background-color: #2C1250;
-    color: white;
-    border: #693B93 2px solid;
-    border-radius: 10px;
-    width: 120px;
-    text-align: center;
-    padding: 7px 15px;
-    margin-top: 10px;
-    cursor: pointer;
+.purpleText {
+  color: #7127ba;
 }
 
-.aboutMe .intentionPart{
-    text-align: center;
+/* -------------- HEADER -------------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 15%;
+  background-color: #1a0b2e;
 }
 
-.aboutMe .intentionPart p:nth-child(2){
-    font-size: 12px;
-    margin-bottom: 20px;
+header nav {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
 }
 
-.aboutMe .intentionPart .image img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+header a {
+  text-decoration: none;
+  color: white;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 500;
 }
 
-.projects{
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    margin-top: 150px;
+/* -------------- MAIN -------------- */
+main {
+  width: 75%;
+  margin: auto;
 }
 
-.projects > div{
-    margin-bottom: 250px;
-    position: relative;
+/* -------------- HELLO -------------- */
+.hello{
+  row-gap: 3rem;
 }
 
-.projects .content{
-    /* ????!!!!????!!!!????!!!!????!!!!????!!!! */
-    width: 60%;
+.helloContainer {
+  grid-template-columns: 2fr 3fr;
+  column-gap: 1rem;
+  align-items: center;
 }
 
-.projects .content p:nth-child(2){
-    font-size: 30px;
-    color: #CCD6F6;
-    margin-bottom: 20px;
+.hello img{
+    height: 350px;
+    background: radial-gradient(circle, rgba(84,36,150,1) 0%, rgba(17,7,31,1) 70%);
 }
 
-.projects .content .blurredBg{
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.001);
-    backdrop-filter: blur(100px);
-    border-radius: 25px;
-    z-index: -1;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+.helloContent .sectionTitle{
+  margin-block: .5rem 1rem;
 }
 
-.projects .content .blurredBg .info{
-    font-weight: 300;
-    font-size: var(--textFontSize);
-    color: #CCD6F6;
+.arrowVector {
+  position: absolute;
+  top: 200px;
+  left: 500px;
+  background-image: url(Media/Arrow.png);
+  background-size: contain;
+  width: 150px;
+  height: 150px;
 }
 
-.projects .imageArea{
-    background-color: #2B0B3A;
-    display: inline-block;
-    width: 450px;
-    z-index: -1;
-
-    /* to eliminate ekstra space at the end of div*/
-    line-height: 0;
+.hello .tools{
+  text-align: center;
+  font-size: calc(var(--h1FontSize) * 1.2);
+  row-gap: 1rem;
 }
 
-.projects .project1 .imageArea{
-    position: absolute;
-    right: 0;
-    top: 0px;
-    padding: 20px 0 0 20px;
-    filter: blur(0.5px);
+.hello .tools i{
+  margin-right: 10px;
+  transition: all .4s;
 }
 
-.projects .project1 .imageArea .vector{
-    top: 0;
-    left: -25%;
-    transform: scale(2, 1.9);
+.hello .tools i:hover{
+  color: #7127ba;
+  transform: translateY(-5px);
+}
+
+.hello a:hover{
+  color: #8a47ce;
+}
+
+.blink{
+  animation: blink 1s infinite steps(1);
+}
+
+@keyframes blink{
+  0%, 100%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 0;
+  }
 }
 
 
-.projects .project2 .content{
-    position: absolute;
-    right: 0;
-    top: 0px;
+
+
+.experiencesPart {
+  /* gradient bg */
+  background-image: url(Media/Gradient.png);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: contain;
 }
 
-.projects .project2 p{
-    text-align: right;
+.experiencesPart p:first-child {
+  font-size: var(--h1FontSize);
+  margin-bottom: 20px;
 }
 
-.projects .project2 .imageArea{
-    position: relative;
-    padding: 20px 20px 0 0;
+.experiencesPart .experienceBoxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 17px;
 }
 
-.projects .project2 .imageArea .vector{
-    top: 0;
-    left: -30%;
-    transform: scale(2, 1.9);
+.experiencesPart .experienceBoxes .experienceBox {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  padding: 30px 44px;
+  background: rgb(26, 11, 46);
+  background: linear-gradient(
+    153deg,
+    rgba(26, 11, 46, 1) 37%,
+    rgba(44, 18, 80, 1) 87%
+  );
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
 }
 
-.contact p:first-child{
-    font-size: var(--headerFontSize);
-    margin-bottom: 40px;
+.experiencesPart .experienceBoxes .experienceBox .experienceTextArea .header {
+  font-size: var(--h2FontSize);
+  font-weight: 600;
 }
 
-.contact p:nth-child(2){
-    margin-bottom: 30px;
+.experiencesPart .experienceBoxes .experienceBox .experienceTextArea .text {
+  font-size: 10px;
 }
 
-.contact .images img{
-    margin: 30px 30px 30px 0;
+.experiencesPart
+  .experienceBoxes
+  .experienceBox
+  .experienceTextArea
+  .learnMoreButton {
+  font-size: 10px;
+  font-family: "Poppins", sans-serif;
+  background-color: #2c1250;
+  color: white;
+  border: #693b93 2px solid;
+  border-radius: 10px;
+  width: 120px;
+  text-align: center;
+  padding: 7px 15px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.intentionPart {
+  text-align: center;
+}
+
+.intentionPart p:nth-child(2) {
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.intentionPart .image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.projects {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  margin-top: 150px;
+}
+
+.projects > div {
+  margin-bottom: 250px;
+  position: relative;
+}
+
+.projects .content {
+  /* ????!!!!????!!!!????!!!!????!!!!????!!!! */
+  width: 60%;
+}
+
+.projects .content p:nth-child(2) {
+  font-size: 30px;
+  color: #ccd6f6;
+  margin-bottom: 20px;
+}
+
+.projects .content .blurredBg {
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.001);
+  backdrop-filter: blur(100px);
+  border-radius: 25px;
+  z-index: -1;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.projects .content .blurredBg .info {
+  font-weight: 300;
+  font-size: var(--textFontSize);
+  color: #ccd6f6;
+}
+
+.projects .imageArea {
+  background-color: #2b0b3a;
+  display: inline-block;
+  width: 450px;
+  z-index: -1;
+
+  /* to eliminate ekstra space at the end of div*/
+  line-height: 0;
+}
+
+.projects .project1 .imageArea {
+  position: absolute;
+  right: 0;
+  top: 0px;
+  padding: 20px 0 0 20px;
+  filter: blur(0.5px);
+}
+
+.projects .project1 .imageArea .vector {
+  top: 0;
+  left: -25%;
+  transform: scale(2, 1.9);
+}
+
+.projects .project2 .content {
+  position: absolute;
+  right: 0;
+  top: 0px;
+}
+
+.projects .project2 p {
+  text-align: right;
+}
+
+.projects .project2 .imageArea {
+  position: relative;
+  padding: 20px 20px 0 0;
+}
+
+.projects .project2 .imageArea .vector {
+  top: 0;
+  left: -30%;
+  transform: scale(2, 1.9);
+}
+
+.contact p:first-child {
+  font-size: var(--h1FontSize);
+  margin-bottom: 40px;
+}
+
+.contact p:nth-child(2) {
+  margin-bottom: 30px;
+}
+
+.contact .images img {
+  margin: 30px 30px 30px 0;
 }
 
 /* !!RESPONSIVE!! */
 
 /* Big Screen */
 @media screen and (max-width: 960px) {
-    :root{
-        --headerFontSize: 30px;
-        --textFontSize: 11px;
-    }
+  :root {
+    --h1FontSize: 30px;
+    --textFontSize: 11px;
+  }
 
-    .aboutMe > div{
-        margin-bottom: 65px;
-    }
+  .hello .helloContent p:nth-child(3) {
+    margin-bottom: -10px;
+  }
 
-    .aboutMe .helloPart .texts p:nth-child(3){
-        margin-bottom: -10px;
-        line-height: 40px;
-    }
+  .experiencesPart .experienceBoxes {
+    grid-template-columns: 1fr;
+  }
 
-    .aboutMe .experiencesPart .experienceBoxes{
-        grid-template-columns: 1fr;
-    }
-
-    .projects .imageArea{
-        width: 400px;
-        opacity: 0.4;
-    }
+  .projects .imageArea {
+    width: 400px;
+    opacity: 0.4;
+  }
 }
 
 /* Mid Screen */
 @media screen and (max-width: 750px) {
-    :root{
-        --headerFontSize: 20px;
-    }
+  :root {
+    --h1FontSize: 20px;
+  }
 
-    main{
-        width: 80%;
-    }
+  main {
+    width: 80%;
+  }
 
-    .aboutMe .helloPart .texts p:nth-child(3){
-        line-height: 40px;
-    }
+  .hello .helloContent p:nth-child(3) {
+    line-height: 40px;
+  }
 
-    .projects .content{
-        width: 80%;
-    }
+  .projects .content {
+    width: 80%;
+  }
 
-    header{
-        padding: 15px 15%;
-    }
+  header {
+    padding: 15px 15%;
+  }
 
-    header nav{
-        width: 80%;
-        margin-left: 100px;
-    }
+  header nav {
+    width: 80%;
+    margin-left: 100px;
+  }
 
+  /* vector alignments */
+  .projects .project1 .imageArea .vector {
+    width: 50%;
+    left: 0;
+    top: -10%;
+  }
+  .projects .project2 .imageArea .vector {
+    width: 50%;
+    left: 0;
+    top: -10%;
+  }
 
-    /* vector alignments */
-    .projects .project1 .imageArea .vector{
-        width: 50%;
-        left: 0;
-        top: -10%;
-    }
-    .projects .project2 .imageArea .vector{
-        width: 50%;
-        left: 0;
-        top: -10%;
-    }
-
-    .aboutMe .helloPart .image .vector {
-        top: -10%;
-        transform: scale(1.2, 1.2);
-    }
+  .hello .image .vector {
+    top: -10%;
+    transform: scale(1.2, 1.2);
+  }
 }
 
 /* Small Screen */
 @media screen and (max-width: 585px) {
-    .aboutMe > div{
-        margin-bottom: 100px;
-    }
+  .hello {
+    display: block;
+    text-align: center;
+  }
 
-    .aboutMe .helloPart{
-        display: block;
-        text-align: center;
-    }
+  .hello p:first-child {
+    position: absolute;
+    top: 100px;
 
-    .aboutMe .helloPart p:first-child{
-        position: absolute;
-        top: 100px;
-        
-        /* to center hello sentence */
-        left: 50%;
-        transform: translate(-40%, 0);
-        font-size: 20px;
-    }
-    
-    .aboutMe .introductionPart{
-        margin-left: 0px;
-        text-align: center;
-    }
+    /* to center hello sentence */
+    left: 50%;
+    transform: translate(-40%, 0);
+    font-size: 20px;
+  }
 
-    .arrowVector{
-        left: 64%;
-        top: -40px;
-        transform: rotateY(180deg) rotateZ(-80deg);
-    }
+  .introductionPart {
+    margin-left: 0px;
+    text-align: center;
+  }
+
+  .arrowVector {
+    left: 64%;
+    top: -40px;
+    transform: rotateY(180deg) rotateZ(-80deg);
+  }
 }
