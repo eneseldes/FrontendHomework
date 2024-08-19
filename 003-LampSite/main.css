@@ -111,16 +111,68 @@ img {
 }
 
 /*=============== THEME ===============*/
+.navButtons{
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
 
+.changeTheme{
+    font-size: 1.25rem;
+    color: var(--whiteColor);
+    transition: color .4s;
+    cursor: poniter;
+}
 
 /*========== Variables Dark theme ==========*/
-
+body.darkTheme{
+    --titleColor: hsl(0, 0%, 95%);
+    --textColor: hsl(0, 0%, 70%);
+    --bodyColor: hsl(0, 0%, 12%);
+    --containerColor: hsl(0, 0%, 15%);
+}
 
 /*========== 
 	Color changes in some parts of 
 	the website, in dark theme
 ==========*/
+.darkTheme :is(.bgHeader, .navMenu){
+    box-shadow: 0 2px 16px hsla(0, 0%, 0%, .2);
+}
 
+.darkTheme :is(.homeShadow, .chooseShadow, .featuresShadow, .joinShadow){
+    background: hsla(15, 60%, 52%, .4);
+}
+
+.darkTheme :is(.popularCard:hover, .featuresInfoCard:hover, .productsCard:hover){
+    box-shadow: 0 12px 16px hsla(0, 0%, 0%, .2);
+}
+
+.darkTheme :is(.popularButton, .chooseFaqIcon, .productsButton){
+    box-shadow: 0 2px 8px hsla(15, 80%, 50%, .5);
+}
+
+.darkTheme .featuresInfoCard{
+    background: linear-gradient(180deg,
+                    hsla(0, 0%, 12%, 0),
+                    hsl(0, 0%, 15%));
+}
+
+.darkTheme .scrollup{
+    box-shadow: 0 4px 16px hsla(0, 0%, 0%, .25);
+}
+
+.darkTheme::-webkit-scrollbar{
+    background-color: hsl(0, 0%, 15%);
+}
+
+.darkTheme::-webkit-scrollbar-thumb{
+    background-color: hsl(0, 0%, 25%);
+}
+
+.darkTheme::-webkit-scrollbar-thumb:hover{
+    background-color: hsl(0, 0%, 35%);
+}
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
@@ -241,7 +293,7 @@ nav{
     box-shadow: 0 2px 16px hsla(0, 0%, 0%, .1);
 }
 
-.bgHeader :is(.navLogo, .navToggle){
+.bgHeader :is(.navLogo, .navToggle, .changeTheme){
     color: var(--titleColor);
 }
 
@@ -409,7 +461,7 @@ nav{
     border-radius: 9rem 9rem 0 0;
     padding: .75rem .75rem 1rem;
     margin-inline: 1rem;
-    transition: box-shadow .4s;
+    transition: box-shadow .4s, background .4s;
 }
 
 .popularCard:hover{
@@ -421,6 +473,7 @@ nav{
     height: 200px;
     border-radius: 8rem 8rem 0 0;
     margin-bottom: .75rem;
+    transition: background .4s; /* For dark theme animation */
 }
 
 .popularImg{
@@ -466,4 +519,507 @@ nav{
 
 .swiper-slide{
     width: 100px;
+}
+
+/*=============== CHOOSE ===============*/
+.chooseContainer{
+    row-gap: 3rem;
+}
+
+.chooseBlob{
+    width: 220px;
+    height: 320px;
+    border: 6px solid transparent;
+    background: var(--secondGradient) padding-box,
+            linear-gradient(90deg, 
+            hsl(20, 72%, 65%) 0%,
+            hsl(20, 78%, 80%) 100%) border-box;
+    border-radius: 20rem 20rem 0 0;
+}
+
+.chooseImage{
+    position: relative;
+    justify-self: center;
+}
+
+.chooseShadow{
+    position: absolute;
+    width: 170px;
+    height: 30px;
+    background: hsla(15, 60%, 52%, .6);
+    bottom: -.75rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    filter: blur(12px);
+    z-index: -1;
+}
+
+.chooseImg{
+    position: relative;
+    display: block;
+    width: 160px;
+    margin: 0 auto;
+    transform: translateY(-6px);
+    z-index: 2;
+}
+
+.chooseBlobTitle{
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    color: hsla(0, 0%, 100%, .3);
+    font-weight: var(--fontMedium);
+    position: absolute;
+    left: .5rem;
+    bottom: 2.5rem;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+}
+
+.chooseData{
+    text-align: center;
+}
+
+.chooseContent,
+.chooseFaq{
+    display: grid;
+    row-gap: 2rem;
+}
+
+.chooseFaqHeader{
+    display: flex;
+    align-items: center;
+    column-gap: .75rem;
+    cursor: pointer;
+}
+
+.chooseFaqTitle{
+    font-size: var(--normalFontSize);
+}
+
+.chooseFaqIcon{
+    display: inline-flex;
+    padding: .25rem;
+    background: var(--thirdGradient);
+    border-radius: .5rem;
+    color: var(--whiteColor);
+    font-size: 1.25rem;
+    box-shadow: 0 2px 8px hsla(15, 68%, 32%, .4);
+    transition: box-shadow .4s;
+}
+
+.chooseFaqIcon i{
+    transition: transform .3s;
+}
+
+.chooseFaqDescription{
+    padding: .5rem 1rem 0 2.5rem;
+}
+
+.chooseFaqContent{
+    overflow: hidden;
+    height: 0;
+    transition: height .3s ease;
+}
+
+/* Rotate icon */
+.faqOpen .chooseFaqIcon i{
+    transform: rotate(45deg);
+}
+
+/* Change color icon */
+.faqOpen .chooseFaqIcon{
+    background: var(--whiteColor);
+    color: var(--firstColorAlt);
+    box-shadow: none;
+}
+
+/* Title color change */
+.faqOpen .chooseFaqTitle{
+    background: var(--thirdGradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/*=============== FEATURES ===============*/
+.featuresContainer{
+    row-gap: 3rem;
+}
+
+.featuresBlob{
+    width: 220px;
+    height: 320px;
+    border: 6px solid transparent;
+    background: var(--secondGradient) padding-box,
+            linear-gradient(90deg, 
+            hsl(20, 72%, 65%) 0%,
+            hsl(20, 78%, 80%) 100%) border-box;
+    border-radius: 20rem 20rem 0 0;
+}
+
+.featuresImage{
+    position: relative;
+    justify-self: center;
+}
+
+.featuresShadow{
+    position: absolute;
+    width: 170px;
+    height: 30px;
+    background: hsla(15, 60%, 52%, .6);
+    bottom: -.75rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    filter: blur(12px);
+    z-index: -1;
+}
+
+.featuresImg{
+    position: relative;
+    display: block;
+    width: 190px;
+    margin: 0 auto;
+    transform: translateY(-6px);
+    z-index: 2;
+}
+
+.featuresBlobTitle{
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    color: hsla(0, 0%, 100%, .3);
+    font-weight: var(--fontMedium);
+    position: absolute;
+    right: .5rem;
+    bottom: 2.5rem;
+    writing-mode: vertical-lr;
+}
+
+.featuresData{
+    text-align: center;
+}
+
+.featuresContent,
+.featuresInfo{
+    display: grid;
+}
+
+.featuresContent{
+    row-gap: 2rem;
+}
+
+.featuresInfo{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.featuresInfoCard{
+    background: linear-gradient(180deg,
+                    hsla(0, 0%, 86%, 0),
+                    hsla(0, 0%, 100%, 1));
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: box-shadow .4s;
+}
+
+.featuresInfoTitle{
+    font-size: var(--h3FontSize);
+    font-weight: var(--fontMedium);
+}
+
+.featuresInfoCard:hover{
+    box-shadow: 0 12px 16px hsla(0, 0%, 0%, .1);
+}
+
+.featuresInfoCard:hover .featuresInfoTitle{
+    background: var(--thirdGradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/*=============== PRODUCTS ===============*/
+.productsContainer{
+    row-gap: 3rem;
+}
+
+.productsData{
+    text-align: center;
+}
+
+.productsContent{
+    gap: 2rem;
+    justify-content: center;
+}
+
+.productsCard{
+    position: relative;
+    width: 200px;
+    height: 322px;
+    background-color: var(--containerColor);
+    border-radius: 9rem 9rem 0 0;
+    padding: .75rem .75rem 1rem;
+    margin-inline: 1rem;
+    transition: box-shadow .4s, background .4s;
+}
+
+.productsCard:hover{
+    box-shadow: 0 12px 16px hsla(0, 0%, 0%, .1);
+}
+
+.productsBlob{
+    background-color: var(--bodyColor);
+    height: 200px;
+    border-radius: 8rem 8rem 0 0;
+    margin-bottom: .75rem;
+    transition: background .4s; /* For dark theme animation */
+}
+
+.productsImg{
+    display: block;
+    width: 120px;
+    margin: 0 auto;
+}
+
+.productsName{
+    font-size: var(--normalFontSize);
+    margin-bottom: .25rem;
+}
+
+.productsSubtitle{
+    display: block;
+    font-size: var(--smallerFontSize);
+    font-family: var(--secondFont);
+    font-weight: var(--fontMedium);
+    margin-bottom: 1rem;
+}
+
+.productsPrice{
+    font-size: var(--h1FontSize);
+}
+
+.productsPrice span{
+    color: var(--firstColorAlt);
+}
+
+.productsButton{
+    display: inline-flex;
+    padding: .25rem;
+    background: var(--thirdGradient);
+    border-radius: .5rem;
+    font-size: 1.25rem;
+    color: var(--whiteColor);
+    box-shadow: 0 2px 8px hsla(15, 68%, 32%, .4);
+    position: absolute;
+    right: .75rem;
+    bottom: 1rem;
+    cursor: pointer;
+}
+
+/*=============== JOIN ===============*/
+.joinContainer{
+    padding-top: 2.5rem;
+}
+
+.joinBg{
+    row-gap: 0;
+    background-color: var(--containerColor);
+    padding: 0 1.5rem 3.5rem 1.5rem;
+    transition: background .4s; /* For dark theme animation */
+}
+
+.joinBlob{
+    position: relative;
+    width: 220px;
+    height: 320px;
+    border: 6px solid transparent;
+    background: var(--secondGradient) padding-box,
+            linear-gradient(90deg, 
+            hsl(20, 72%, 65%) 0%,
+            hsl(20, 78%, 80%) 100%) border-box;
+    border-radius: 20rem 20rem 0 0;
+    z-index: 2;
+}
+
+.joinImage{
+    position: relative;
+    justify-self: center;
+    transform: translateY(-3.5rem);
+}
+
+.joinShadow{
+    position: absolute;
+    width: 170px;
+    height: 30px;
+    background: hsla(15, 60%, 52%, .6);
+    bottom: -.75rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    filter: blur(12px);
+    z-index: -1;
+}
+
+.joinImg{
+    display: block;
+    width: 190px;
+    margin: 0 auto;
+    transform: translate(-6px);
+}
+
+.joinBlobTitle{
+    text-align: center;
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    color: hsla(0, 0%, 100%, .3);
+    font-weight: var(--fontMedium);
+}
+
+.joinContent{
+    row-gap: 2rem;
+}
+
+.joinData{
+    text-align: center;
+}
+
+.joinForm{
+    display: grid;
+    row-gap: .75rem;
+}
+
+.joinInput{
+    width: 100%;
+    background-color: var(--bodyColor);
+    padding: 1.25rem 1.5rem;
+    border-radius: 4rem;
+    color: var(--textColor);
+    transition: background .4s; /* For dark theme animation */
+}
+
+.joinInput::placeholder{
+    font-family: var(--secondFont);
+}
+
+.joinButton{
+    padding-block: 1.1rem;
+    border-radius: 4rem;
+    cursor: pointer;
+    background: linear-gradient(90deg, 
+            hsl(20, 78%, 51%) 0%,
+            hsl(20, 78%, 65%) 100%) border-box;
+    color: white;
+}
+
+/*=============== FOOTER ===============*/
+footer{
+    padding-block: 3rem 2.5rem;
+}
+
+.footerContent{
+    row-gap: 3rem;
+}
+
+.footerLogo{
+    display: inline-block;
+    color: var(--titleColor);
+    font-size: var(--h2FontSize);
+    font-family: var(--secondFont);
+    font-weight: var(--fontMedium);
+    margin-bottom: .75rem;
+}
+
+.footerLogo span{
+    background: var(--thirdGradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.footerData{
+    grid-template-columns: repeat(2, max-content);
+    gap: 2.5rem 4rem;
+}
+
+.footerTitle{
+    font-size: var(--h3FontSize);
+    font-weight: var(--fontMedium);
+    margin-bottom: 1rem;
+}
+
+.footerLinks{
+    display: grid;
+    row-gap: .75rem;
+}
+
+.footerLink{
+    color: var(--textColor);
+    transition: color .4s;
+}
+
+.footerLink:hover{
+    color: var(--titleColor);
+}
+
+.footerSocial{
+    display: flex;
+}
+
+.footerSocial{
+    column-gap: 1.25rem;
+}
+
+.footerSocialLink{
+    font-size: 1.25rem;
+    background: var(--thirdGradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: transform .4s;
+}
+
+.footerSocialLink:hover{
+    transform: translateY(-.25rem);
+}
+
+/*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar{
+    width: .6rem;
+    border-radius: .5rem;
+    background-color: hsl(0, 0%, 75%);
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: .5rem;
+    background-color: hsl(0, 0%, 65%);
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background-color: hsl(0, 0%, 55%);
+}
+
+/*=============== SCROLL UP ===============*/
+.scrollup{
+    position: fixed;
+    right: 1rem;
+    bottom: -50%;
+    background: var(--containerColor);
+    display: inline-flex;
+    padding: 6px;
+    font-size: 1.25rem;
+    color: var(--titleColor);
+    border-radius: .25rem;
+    box-shadow: 0 4px 16px hsla(0, 0%, 0%, .1);
+    z-index: var(--zTooltip);
+    transition: bottom .4s, transform .4s, background .4s;
+}
+
+.scrollup:hover{
+    transform: translateY(-.25rem);
+}
+
+/* Show scroll up*/
+.showScroll{
+    bottom: 3rem;
 }
